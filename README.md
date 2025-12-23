@@ -1,123 +1,86 @@
-🚗 Vehicle Rental System – Database Design & SQL Queries
-📌 Project Overview
+# Vehicle Rental System – Database Design & SQL Queries
 
-This project is a Vehicle Rental System database designed to demonstrate understanding of:
+## Project Description
+This project implements a simplified **Vehicle Rental System** database to demonstrate understanding of:
 
-Relational database design
+- Relational database design
+- Entity Relationship Diagrams (ERD)
+- Primary keys and foreign keys
+- SQL queries using JOIN, EXISTS, WHERE, GROUP BY, and HAVING
 
-Entity Relationship Diagram (ERD)
+The system manages users, vehicles, and bookings following real-world rental business logic.
 
-Primary and foreign keys
+---
 
-SQL queries using JOIN, EXISTS, WHERE, GROUP BY and HAVING
+## Database Schema Overview
+The database consists of three tables:
 
-The system manages users, vehicles, and bookings, following real-world rental business logic.
+### Users
+- Stores user information such as name, email, password, phone number
+- Each user has a role (Admin or Customer)
+- Email addresses are unique
 
-🗂️ Database Structure
+### Vehicles
+- Stores vehicle details such as name, type, model
+- Each vehicle has a unique registration number
+- Tracks rental price per day and availability status
 
-The database consists of three main tables:
+### Bookings
+- Stores booking records
+- Links users and vehicles using foreign keys
+- Contains rental period, booking status, and total cost
 
-1. Users
+---
 
-Stores user information such as:
+## Entity Relationship Diagram (ERD)
+- One user can make multiple bookings (One-to-Many)
+- A vehicle can appear in multiple bookings over time (Many-to-One)
+- Each booking is associated with exactly one user and one vehicle
 
-Name, email, password, phone number
+The ERD was created using the **drawSQL** tool and includes:
+- Primary Keys (PK)
+- Foreign Keys (FK)
+- Relationship cardinality
+- Status fields
 
-User role (Admin or Customer)
+---
 
-Each email is unique
+## SQL Queries (`queries.sql`)
+All required SQL queries are included in the `queries.sql` file.  
+Each query directly solves a specific requirement of the assignment.
 
-2. Vehicles
+### Included Queries
+1. **INNER JOIN**
+   - Retrieves booking information along with customer name and vehicle name
 
-Stores vehicle-related data including:
+2. **NOT EXISTS**
+   - Finds vehicles that have never been booked
 
-Vehicle name, type (car/bike/truck), model
+3. **WHERE Clause**
+   - Retrieves all available vehicles of a specific type (e.g., cars)
 
-Registration number (unique)
+4. **GROUP BY and HAVING**
+   - Finds vehicles that have more than two bookings
 
-Rental price per day
+Each query is written using proper SQL standards and comments for clarity.
 
-Availability status (available, rented, maintenance)
+---
 
-3. Bookings
+## Submission Links
+> Update the links below before final submission.
 
-Stores booking details:
+- **ERD Diagram (drawSQL):** [https://your-erd-link-here](https://drawsql.app/teams/car-booking/diagrams/car-booking)
+- **GitHub Repository:** https://github.com/Niamot-Ullah/B2A3
+- **queries.sql File:** https://your-queries-file-link-here
 
-Which user made the booking
+---
 
-Which vehicle was booked
+## Technologies Used
+- SQL (PostgreSQL compatible)
+- drawSQL (ERD design)
 
-Rental start and end dates
+---
 
-Booking status (pending, confirmed, completed, cancelled)
-
-Total booking cost
-
-🔗 Entity Relationship Diagram (ERD)
-
-One-to-Many: One user can have many bookings
-
-Many-to-One: Many bookings can refer to one vehicle
-
-Each booking connects exactly one user and one vehicle
-
-The ERD was created using the drawSQL tool and includes:
-
-Primary keys (PK)
-
-Foreign keys (FK)
-
-Relationship cardinality
-
-Status fields for business logic
-
-📄 SQL Queries (queries.sql)
-
-All required SQL queries are written and stored in the queries.sql file.
-Each query solves a specific requirement of the system.
-
-Query 1: Retrieve Booking Information
-
-Uses INNER JOIN to retrieve:
-
-Booking details
-
-Customer name
-
-Vehicle name
-
-Query 2: Vehicles Never Booked
-
-Uses NOT EXISTS to find vehicles that have never been booked.
-
-Query 3: Available Vehicles by Type
-
-Uses WHERE clause to retrieve all available vehicles of a specific type (e.g., cars).
-
-Query 4: Vehicles with More Than Two Bookings
-
-Uses GROUP BY and HAVING to:
-
-Count total bookings per vehicle
-
-Display only vehicles with more than two bookings
-
-✔ All queries are written correctly and follow the assignment requirements.
-
-🧪 Technologies Used
-
-PostgreSQL / SQL
-
-drawSQL (for ERD design)
-
-✅ Conclusion
-
-This project successfully demonstrates:
-
-Proper database design
-
-Correct use of relational concepts
-
-Efficient SQL querying techniques
-
-All requirements mentioned in the assignment have been implemented and documented properly.
+## Conclusion
+This project fulfills all assignment requirements by combining proper database design with correctly implemented SQL queries.  
+The documentation and queries demonstrate a clear understanding of relational databases and SQL concepts.
